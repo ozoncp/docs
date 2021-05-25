@@ -32,7 +32,7 @@ erDiagram
           Issue ||--o| Prize: has
           Project ||--|{ Document: contains
           Project ||--|{ Repo: contains
-          Proposal ||--|{ Document: contains
+          Proposal ||--|| Document: has
           Slide ||--|| Question: has
           Question ||--|| Answer: has
           Question ||--|{ Variant: has
@@ -43,32 +43,35 @@ erDiagram
           }
           Event {
             Name string
+            CalendarId uint64
             Schedule Schedule
           }
           User {
-            ProfileId uint
+            ProfileId uint64
+            CalendarId uint64
           }
           Tag {
             Type string
             Value string
           }
           Resume {
-            DocumentId uint
+            UserId uint64
+            DocumentId uint64
           }
           Achievement {
             Name string
             Description string
           }
           Slide {
-            LessonId uint
-            Number uint
+            LessonId uint64
+            Number uint64
           }
           Role {
             Service string
             Operation string
           }
           Howto {
-            CourseId uint
+            CourseId uint64
             Question string
             Answer string
           }
@@ -76,39 +79,40 @@ erDiagram
             Text string
           }
           Repo {
-            UserId uint
+            ProjectId uint64
+            UserId uint64
             Link string
           }
           Answer {
-            QuestionId uint
-            UserId uint
+            QuestionId uint64
+            UserId uint64
             Success bool
           }
           Variant {
-            QuestionId uint
+            QuestionId uint64
             Text string
             Success bool
           }
           Progress {
-            ClassroomId uint
-            PresentationId uint
-            SlideId uint
-            UserId uint
+            ClassroomId uint64
+            PresentationId uint64
+            SlideId uint64
+            UserId uint64
           }
           Presentation {
-            Name string  
-            LessonId uint
+            Name string
+            LessonId uint64
           }
           Verdict {
-            UserId uint
-            IssueId uint
+            SolutionId uint64
+            UserId uint64
             Comment string
             Success bool
           }
           Check {
-            SolutionId uint
-            TestId uint
-            RunnerId uint
+            SolutionId uint64
+            TestId uint64
+            RunnerId uint64
             Success bool
           }
           Runner {
@@ -120,66 +124,71 @@ erDiagram
             Link string
           }
           Chat {
+            ClassroomId uint64
             Link string
           }
           Course {
+            ClassroomId uint64
             Name string
             Stream string
           }
           Project {
-            CourseId uint
+            CourseId uint64
             Name string
           }
           Feedback {
-            UserId  uint
+            ClassroomId uint64
+            UserId  uint64
             Comment string
           }
           Document {
             Link string
           }
           Note {
-            UserId uint
-            ClassroomId uint
-            DocumentId uint
+            UserId uint64
+            ClassroomId uint64
+            DocumentId uint64
           }
           Lesson {
-            Number uint
+            Number uint64
             Name string
           }
           Classroom {
-            TenantId uint
-            CalendarId uint
+            TenantId uint64
+            CalendarId uint64
           }
           Tenant {
             Name string
             Type uint
           }
           Issue {
-            ClassroomId uint
-            UserId uint
-            TaskId uint
+            ClassroomId uint64
+            UserId uint64
+            TaskId uint64
             Dealine Time
           }
           Solution {
-            IssueId uint
+            IssueId uint64
           }
           Task {
-            IssueId uint
+            IssueId uint64
             Difficulty enum
           }
           Test {
-            Task uint
+            Task uint64
           }
           Proposal {
-            LessonId uint
-            DocumentId uint
+            LessonId uint64
+            UserId uint64
+            DocumentId uint64
           }
           Prize {
-            IsssueId uint
+            IsssueId uint64
             Link     string
           }
           Snippet {
-            UserId uint
+            SolutionId uint64
+            UserId uint64
             Text string
             Language string
           }
