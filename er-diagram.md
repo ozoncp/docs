@@ -126,6 +126,7 @@ erDiagram
             Link string
           }
           Course {
+            Id uint64
             ClassroomId uint64
             Name string
             Stream string
@@ -148,6 +149,8 @@ erDiagram
             DocumentId uint64
           }
           Lesson {
+            Id uint64
+            CourseId uint64
             Number uint64
             Name string
           }
