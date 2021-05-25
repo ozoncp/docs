@@ -11,24 +11,22 @@ erDiagram
           Solution ||--|{ Check: has
           Solution ||--|{ Snippet: has
           Solution ||--|| Verdict: has
-          Check ||--|| Test: has
+          Check }|--|| Test: has
           Course ||--|{ Lesson: has
           Course ||--o{ Project: has
           Course ||--|{ Howto: has
-          Lesson ||--|{ Document: has
           Classroom }|--|| Tenant: has
-          Classroom }|--|{ Feedback: has
-          Classroom }|--|{ Note: has
-          Classroom }|--|{ Chat: has
-          Classroom }|--|| Course: has
+          Classroom ||--|{ Feedback: has
+          Classroom ||--|{ Note: has
+          Classroom ||--|{ Chat: has
+          Classroom ||--|{ Course: has
           Classroom || -- |{ Progress: has
           Lesson ||--|{ Proposal: has
           Lesson ||--|| Presentation: has
           Presentation ||--|{ Slide: has
           Slide ||--|| Document: has
           Slide ||--|| Video: has
-          Slide ||--|{ Task: has
-          Check }|--|| Runner: has
+          Slide ||--|| Task: has
           Issue ||--o| Prize: has
           Project ||--|{ Document: contains
           Project ||--|{ Repo: contains
@@ -175,7 +173,9 @@ erDiagram
             Difficulty enum
           }
           Test {
-            Task uint64
+            TaskId uint64
+            Input string
+            Output string
           }
           Proposal {
             LessonId uint64
@@ -183,7 +183,7 @@ erDiagram
             DocumentId uint64
           }
           Prize {
-            IsssueId uint64
+            IssueId uint64
             Link     string
           }
           Snippet {
