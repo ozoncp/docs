@@ -37,14 +37,17 @@ erDiagram
           User ||--|{ Achievement: has
           User ||--|| Resume: has
           Calendar {
+            Id uint64
             Name string
           }
           Event {
+            Id uint64
             Name string
             CalendarId uint64
             Schedule Schedule
           }
           User {
+            Id uint64
             ProfileId uint64
             CalendarId uint64
           }
@@ -53,6 +56,7 @@ erDiagram
             Value string
           }
           Resume {
+            Id uint64
             UserId uint64
             DocumentId uint64
           }
@@ -61,7 +65,8 @@ erDiagram
             Description string
           }
           Slide {
-            LessonId uint64
+            Id uint64
+            PresentationId uint64
             Number uint64
           }
           Role {
@@ -69,39 +74,47 @@ erDiagram
             Operation string
           }
           Howto {
+            Id uint64
             CourseId uint64
             Question string
             Answer string
           }
           Question {
+            Id uint64
             Text string
           }
           Repo {
+            Id uint64
             ProjectId uint64
             UserId uint64
             Link string
           }
           Answer {
+            Id uint64
             QuestionId uint64
             UserId uint64
             Success bool
           }
           Variant {
+            Id uint64
             QuestionId uint64
             Text string
             Success bool
           }
           Progress {
+            Id uint64
             ClassroomId uint64
             PresentationId uint64
             SlideId uint64
             UserId uint64
           }
           Presentation {
+            Id uint64
             Name string
             LessonId uint64
           }
           Verdict {
+            Id uint64
             SolutionId uint64
             UserId uint64
             Comment string
@@ -109,20 +122,24 @@ erDiagram
             Timestamp int64
           }
           Check {
+            Id uint64
             SolutionId uint64
             TestId uint64
             RunnerId uint64
             Success bool
           }
           Runner {
+            Id uint64
             Guid string
             Os string
             Arch string
           }
           Video {
+            Id uint64
             Link string
           }
           Chat {
+            Id uint64
             ClassroomId uint64
             Link string
           }
@@ -133,18 +150,22 @@ erDiagram
             Stream string
           }
           Project {
+            Id uint64
             CourseId uint64
             Name string
           }
           Feedback {
+            Id uint64
             ClassroomId uint64
             UserId  uint64
             Comment string
           }
           Document {
+            Id uint64
             Link string
           }
           Note {
+            Id uint64
             UserId uint64
             ClassroomId uint64
             DocumentId uint64
@@ -156,14 +177,17 @@ erDiagram
             Name string
           }
           Classroom {
+            Id uint64
             TenantId uint64
             CalendarId uint64
           }
           Tenant {
+            Id uint64
             Name string
             Type uint
           }
           Issue {
+            Id uint64
             ClassroomId uint64
             UserId uint64
             TaskId uint64
@@ -174,24 +198,29 @@ erDiagram
             IssueId uint64
           }
           Task {
+            Id uint64
             IssueId uint64
             Difficulty enum
           }
           Test {
+            Id uint64
             TaskId uint64
             Input string
             Output string
           }
           Proposal {
+            Id uint64
             LessonId uint64
             UserId uint64
             DocumentId uint64
           }
           Prize {
+            Id uint64
             IssueId uint64
             Link     string
           }
           Snippet {
+            Id uint64
             SolutionId uint64
             UserId uint64
             Text string
