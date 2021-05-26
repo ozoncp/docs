@@ -105,7 +105,8 @@ erDiagram
             SolutionId uint64
             UserId uint64
             Comment string
-            Success bool
+            Status enum
+            Timestamp int64
           }
           Check {
             SolutionId uint64
@@ -169,6 +170,7 @@ erDiagram
             Dealine Time
           }
           Solution {
+            Id uint64
             IssueId uint64
           }
           Task {
