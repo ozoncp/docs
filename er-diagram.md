@@ -103,6 +103,7 @@ erDiagram
           }
           Verdict {
             SolutionId uint64
+            UserId uint64
             Comment string
             Status enum
             Timestamp int64
