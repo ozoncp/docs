@@ -166,6 +166,7 @@ erDiagram
             Dealine Time
           }
           Solution {
+            Id uint64
             IssueId uint64
           }
           Task {
