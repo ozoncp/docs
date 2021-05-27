@@ -162,7 +162,9 @@ erDiagram
           }
           Document {
             Id uint64
+            Name string
             Link string
+            SourceLink string
           }
           Note {
             Id uint64
