@@ -27,11 +27,11 @@ erDiagram
           Slide ||--|| Document: has
           Slide ||--|| Video: has
           Slide ||--|| Task: has
+          Slide ||--|| Question: has
           Issue ||--o| Prize: has
           Project ||--|{ Document: contains
           Project ||--|{ Repo: contains
           Proposal ||--|| Document: has
-          Slide ||--|| Question: has
           Question ||--|| Answer: has
           Question ||--|{ Variant: has
           User ||--|{ Achievement: has
@@ -68,6 +68,7 @@ erDiagram
             Id uint64
             PresentationId uint64
             Number uint64
+            Type uint8
           }
           Role {
             Service string
@@ -109,9 +110,11 @@ erDiagram
             UserId uint64
           }
           Presentation {
-            Id uint64
-            Name string
-            LessonId uint64
+              Id uint64
+              LessonId uint64
+              UserId uint64
+              Name string
+              Description string
           }
           Verdict {
             Id uint64
