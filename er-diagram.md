@@ -204,7 +204,7 @@ erDiagram
           }
           Task {
             Id uint64
-            IssueId uint64
+            Description string
             Difficulty enum
           }
           Test {
