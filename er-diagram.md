@@ -139,6 +139,7 @@ erDiagram
           }
           Video {
             Id uint64
+            SlideId uint64
             Link string
           }
           Chat {
